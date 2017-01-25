@@ -1,0 +1,50 @@
+Run options: --seed 34548
+
+# Running:
+
+EEEEEEE
+
+Finished in 0.036118s, 193.8077 runs/s, 0.0000 assertions/s.
+
+  1) Error:
+ProductsControllerTest#test_should_update_product:
+ActiveRecord::Fixture::FixtureError: table "products" has no column named "\".
+    
+
+
+  2) Error:
+ProductsControllerTest#test_should_destroy_product:
+ActiveRecord::Fixture::FixtureError: table "products" has no column named "\".
+    
+
+
+  3) Error:
+ProductsControllerTest#test_should_get_edit:
+ActiveRecord::Fixture::FixtureError: table "products" has no column named "\".
+    
+
+
+  4) Error:
+ProductsControllerTest#test_should_get_index:
+ActiveRecord::Fixture::FixtureError: table "products" has no column named "\".
+    
+
+
+  5) Error:
+ProductsControllerTest#test_should_show_product:
+ActiveRecord::Fixture::FixtureError: table "products" has no column named "\".
+    
+
+
+  6) Error:
+ProductsControllerTest#test_should_get_new:
+ActiveRecord::Fixture::FixtureError: table "products" has no column named "\".
+    
+
+
+  7) Error:
+ProductsControllerTest#test_should_create_product:
+ActiveRecord::Fixture::FixtureError: table "products" has no column named "\".
+    
+
+7 runs, 0 assertions, 0 failures, 7 errors, 0 skips
