@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      product: Товар
+    attributes:
+      product:
+        title: "Наименование"
+        description: "Описание"
+        image_url: "Ссылка на рисунок (jpg/png/gif)"
+        price: "Цена"
