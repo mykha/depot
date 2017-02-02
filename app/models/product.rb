@@ -6,4 +6,5 @@ class Product < ActiveRecord::Base
       with: %r{\.(png|jpg|gif)\Z}i,
       massage: 'URL должен указывать на изображение формата GIF, JPG или PNG.'
   }
+  validates :title, length: {minimum: 10, too_short: "Длина наименования должна быть не менее 10 символов"}, allow_blank: true
 end

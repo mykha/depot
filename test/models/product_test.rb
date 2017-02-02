@@ -57,8 +57,17 @@ http://a.b.c/x/y/z/fred.gif }
                           price: 1,
                           image_url: "fred.gif")
     assert product.invalid?
-    assert_equal [I18n.translate('activerecord.errors.messages.taken')], product.errors[:title]
+    #assert_equal [I18n.translate('activerecord.errors.messages.taken')], product.errors[:title]
+    assert_equal ["уже существует"], product.errors[:title]
 # уже было использовано
   end
+
+  test "product title must have minimum 10 characters" do
+    product = Product.new(title: "Too short", description: "uuu", price: 1, image_url: "fred.gif")
+    assert product.invalid?
+    assert_equal ["Длина наименования должна быть не менее 10 символов"], product.errors[:title]
+    # наименование товара меньше 10 символов
+  end
+
 
 end
