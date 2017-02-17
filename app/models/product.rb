@@ -7,4 +7,22 @@ class Product < ActiveRecord::Base
       massage: 'URL должен указывать на изображение формата GIF, JPG или PNG.'
   }
   validates :title, length: {minimum: 10, too_short: "Длина наименования должна быть не менее 10 символов"}, allow_blank: true
+
+  def self.latest
+    Product.order(:updated_at).last
+  end
+
+  has_many :line_items
+  before_destroy :ensure_not_referenced_by_any_line_item
+
+  private
+  def ensure_not_referenced_by_any_line_item
+    if line_items.empty?
+      return true
+    else
+      errors.add(:base, 'Существуют товарные позиции')
+      return false
+    end
+  end
 end
+
