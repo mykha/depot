@@ -758,7 +758,7 @@
       <workItem from="1485289875518" duration="2177000" />
       <workItem from="1485375334944" duration="27776000" />
       <workItem from="1486064903592" duration="9014000" />
-      <workItem from="1486810209938" duration="19886000" />
+      <workItem from="1486810209938" duration="20025000" />
     </task>
     <task id="LOCAL-00001" summary="Depot by Scaffold">
       <created>1485375528009</created>
@@ -809,11 +809,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487357380726</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary=" Store  cart">
+      <created>1487357391366</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1487357391366</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65357000" />
+    <option name="totallyTimeSpent" value="65496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
