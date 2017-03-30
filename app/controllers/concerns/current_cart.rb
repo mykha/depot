@@ -7,4 +7,13 @@ module CurrentCart
     @cart = Cart.create
     session[:cart_id] = @cart.id
   end
+
+  private
+  def add_counter
+    if session[:counter].nil?
+      session[:counter]=0
+    else
+      session[:counter] = session[:counter]+1
+    end
+  end
 end
