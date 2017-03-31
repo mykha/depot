@@ -44,11 +44,20 @@ Product.create!(title: 'Rails Test Prescriptions',
   image_url: 'rtp.jpg',
   price: 34.95)
 
-Product.create!(title: 'Б.Акунин "Бох и Шельма"',
+product = Product.create(title: 'Б.Акунин "Бох и Шельма"',
                 description:
                     %{<p>
         Художественное произведение, повесть во времена нашествия Батыя на Русь
       </p>},
                 image_url: 'BohShelma.jpg',
                 price: 134.95)
+
+LineItem.delete_all
+
+Cart.delete_all
+cart = Cart.create
+session[:cart_id] = cart.id
+cart.add_product(product.id)
+cart.add_product(product.id)
+cart.add_product(product.id)
 

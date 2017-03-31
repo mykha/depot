@@ -3,6 +3,7 @@ require 'test_helper'
 class ProductTest < ActiveSupport::TestCase
   fixtures :products
 
+
   test "Product attributes must not be empty" do
     product = Product.new
     assert product.invalid?
@@ -68,6 +69,17 @@ http://a.b.c/x/y/z/fred.gif }
     assert_equal ["Длина наименования должна быть не менее 10 символов"], product.errors[:title]
     # наименование товара меньше 10 символов
   end
+
+  test "Product name must be uniq" do
+
+    product_1 = Product.new(title: "Too short", description: "uuu", price: 1, image_url: "fred.gif")
+    product_1.save
+    product_2 = Product.new(title: "Too short", description: "uuu", price: 1, image_url: "fred.gif")
+    product_2.save
+    assert product_2.invalid?
+
+  end
+
 
 
 end
