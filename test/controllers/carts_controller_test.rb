@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CartsControllerTest < ActionController::TestCase
   setup do
-    @cart = carts(:one)
+    @cart = carts(:cart1)
   end
 
 =begin   Failures below
@@ -34,8 +34,8 @@ class CartsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @cart
-    assert_response :success
+      get :edit, id: @cart
+      assert_response :success
   end
 
   test "should update cart" do

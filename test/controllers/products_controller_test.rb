@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
+
   setup do
     @product = products(:product1)
     @update = {
@@ -31,7 +32,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should show product" do
-    get :show, id: @product
+    get :show, id: @product.id
     assert_response :success
   end
 

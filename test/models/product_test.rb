@@ -71,14 +71,15 @@ http://a.b.c/x/y/z/fred.gif }
   end
 
   test "Product name must be uniq" do
-
-    product_1 = Product.new(title: "Too short", description: "uuu", price: 1, image_url: "fred.gif")
+    @p = products(:product1)
+    product_1 = Product.new(title: @p.title, description: @p.description, price: @p.price, image_url: @p.image_url)
     product_1.save
-    product_2 = Product.new(title: "Too short", description: "uuu", price: 1, image_url: "fred.gif")
+    product_2 = Product.new(title: @p.title, description: @p.description, price: @p.price, image_url: @p.image_url)
     product_2.save
     assert product_2.invalid?
-
+    assert_equal ["уже существует"], product.errors[:title]
   end
+
 
 
 
