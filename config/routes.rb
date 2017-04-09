@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   #root 'welcome#index'
   root to: 'store#index', as: 'store'
 
+  post 'line_items/:line_item_id/decrement' => 'line_items#decrement', as:'decrement_line_item'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

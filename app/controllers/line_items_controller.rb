@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create]
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_line_item, only: [:show, :edit, :update]
 
   # GET /line_items
   # GET /line_items.json
@@ -62,10 +62,28 @@ class LineItemsController < ApplicationController
     @line_item.destroy
     respond_to do |format|
       format.html { redirect_to store_url }
-      format.js
+      format.js {}
       format.json { head :no_content }
     end
   end
+
+  def decrement
+    line_item = LineItem.find(params[:line_item_id])
+    #@line_item = params[:line_item]
+    if line_item.quantity > 1 then
+      line_item.quantity-=1
+      line_item.save
+    else
+      #destroy item
+      line_item.destroy
+    end
+    respond_to do |format|
+      format.html { redirect_to store_url }
+      format.js {}
+      format.json { head :no_content }
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -75,7 +93,7 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      #params.require(:line_item).permit(:product_id, :cart_id)
-      params.require(:line_item).permit(:product_id)
+      params.require(:line_item).permit(:product_id, :cart_id, :quantity)
+      #params.require(:line_item).permit(:product_id)
     end
 end
